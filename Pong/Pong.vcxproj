@@ -154,6 +154,9 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bat.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
