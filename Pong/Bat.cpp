@@ -17,6 +17,7 @@ FloatRect Bat::getPosition() {
 	return m_Shape.getGlobalBounds();
 }
 
+//Pass a copy of m_Shape to the calling code so that we can draw the bat in the main function
 RectangleShape Bat::getShape() {
 	return m_Shape;
 }
@@ -37,16 +38,22 @@ void Bat::stopRight() {
 	m_MovingRight = false;
 }
 
+//Called once/frame
 void Bat::update(Time dt) {
 	
+	//Causes the bat to move relative to how long the frame took to update
 	if (m_MovingLeft) {
+		//Multiplies the speed by the delta time and subtracts it from the position
 		m_Position.x -= m_Speed * dt.asSeconds();
 	}
 
+	//Causes the bat to move relative to how long the frame took to update
 	if (m_MovingRight) {
+		//Multiplies the speed by the delta time and adds it from the position
 		m_Position.x += m_Speed * dt.asSeconds();
 	}
 
+	//Sets the position of m_Shape with whatever the latest values held in m_Position are
 	m_Shape.setPosition(m_Position);
 }
 
