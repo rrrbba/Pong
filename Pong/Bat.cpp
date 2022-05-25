@@ -57,4 +57,3 @@ void Bat::update(Time dt) {
 	m_Shape.setPosition(m_Position);
 }
 
-//169
