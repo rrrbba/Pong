@@ -42,3 +42,13 @@ void Ball::reboundBottom() {
 	m_DirectionY = -m_DirectionY;
 }
 
+void Ball::update(Time dt) {
+	//Update the ball's position
+	
+	//m_Positon.y and .x are updated by using the appro. direction velocity, speed and the amount of time the current frame took to complete
+	m_Position.y += m_DirectionY * m_Speed * dt.asSeconds();
+	m_Position.x += m_DirectionX * m_Speed * dt.asSeconds();
+
+	//Move the ball - the newly updated m_Positon values are used to change the position the m_Shape RectangleShape instance is positioned at
+	m_Shape.setPosition(m_Position);
+}
