@@ -88,6 +88,23 @@ int main()
         ss << "Score:" << score << " Lives:" << lives;
         hud.setString(ss.str());
 
+        //Handle ball hitting the bottom
+        //If the top of the ballis at a greater position than the height of the window, then the ball has disappeared off the bottom of the player's view
+        if (ball.getPosition().top > window.getSize().y) {
+            //Reverse the ball direction
+            ball.reboundBottom();
+
+            //Remove a life
+            lives--;
+
+            //Check for zero lives
+            if (lives < 1) {
+                //Reset the score
+                score = 0;
+                //Reset the lives
+                lives = 3;
+            }
+        }
 
         /********Draw the bat, the ball and the HUD*******/
         window.clear();
@@ -101,4 +118,4 @@ int main()
     return 0;
 }
 
-//172
+//185
