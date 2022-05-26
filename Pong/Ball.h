@@ -23,10 +23,13 @@ public:
 	
 	float getXVelocity();
 
+	//Called in response to the ball hitting the sides of the screen
 	void reboundSides();
 
+	//Called in response to the ball hitting the player's bat or top of the screen
 	void reboundBatOrTop();
 
+	//Called in response to the ball hitting bottom of the screen
 	void reboundBottom();
 
 	void update(Time dt);

@@ -93,6 +93,7 @@ int main()
         window.clear();
         window.draw(hud);
         window.draw(bat.getShape());
+        window.draw(ball.getShape());
         window.display();
 
     }
