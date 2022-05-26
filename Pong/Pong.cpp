@@ -106,6 +106,21 @@ int main()
             }
         }
 
+        //Handle the ball hitting the top
+        if (ball.getPosition().top < 0) {
+            //Reverse the vertical direc. of travel and send ball back toward the bottom of screen
+            ball.reboundBatOrTop();
+
+            //Add a point to the player's score
+            score++;
+        }
+
+        //Handle the ball hitting the sides
+        if (ball.getPosition().left < 0 || ball.getPosition().left + ball.getPosition().width > window.getSize().x) {
+            ball.reboundSides();
+        }
+
+
         /********Draw the bat, the ball and the HUD*******/
         window.clear();
         window.draw(hud);
