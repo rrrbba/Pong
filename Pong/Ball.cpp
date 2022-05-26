@@ -24,3 +24,21 @@ RectangleShape Ball::getShape() {
 float Ball::getXVelocity() {
 	return m_DirectionX;
 }
+
+//m_DirectionX value is inverted when the ball hits the sides (reversing the direction of the ball)
+void Ball::reboundSides() {
+	m_DirectionX = -m_DirectionX;
+}
+
+//m_DirectionY value is inverted when the ball hits the top or bottom (reversing the direction of the ball)
+void Ball::reboundBatOrTop() {
+	m_DirectionY = -m_DirectionY;
+}
+
+//reboundBottom repositions the ball at the top center of the screen and sends it downward. What we want to happen after the player missed a ball and it has hit the bottom of the screen
+void Ball::reboundBottom() {
+	m_Position.y = 0;
+	m_Position.x = 500;
+	m_DirectionY = -m_DirectionY;
+}
+
