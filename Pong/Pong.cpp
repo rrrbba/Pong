@@ -44,10 +44,45 @@ int main()
     while (window.isOpen()) {
 
         /*****Handle player input*******/
+        Event event;
+
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
+                //Quit the game when the window is closed
+                window.close();
+        }
+        
+        //Handle the player quitting
+        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+            window.close();
+        }
+
+        //Handle the pressing and releasing of left arrow key
+        if (Keyboard::isKeyPressed(Keyboard::Left)) {
+            bat.moveLeft();
+        }
+        else {
+            bat.stopLeft();
+        }
+
+        //Handle the pressing and releasing of right arrow key
+        if (Keyboard::isKeyPressed(Keyboard::Right)) {
+            bat.moveRight();
+        }
+        else {
+            bat.stopRight();
+        }
+
 
         /*******Update the bat, the ball and the HUD*******/
 
+
+
+
         /********Draw the bat, the ball and the HUD*******/
+
+
+
     }
 
     return 0;
