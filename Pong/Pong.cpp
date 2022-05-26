@@ -87,8 +87,10 @@ int main()
 
 
         /********Draw the bat, the ball and the HUD*******/
-
-
+        window.clear();
+        window.draw(hud);
+        window.draw(bat.getShape());
+        window.display();
 
     }
 
