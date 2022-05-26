@@ -76,7 +76,14 @@ int main()
 
         /*******Update the bat, the ball and the HUD*******/
 
+        //Update the delta time
+        Time dt = clock.restart();
+        bat.update(dt);
 
+        //Update the HUD text
+        std::stringstream ss;
+        ss << "Score:" << score << " Lives:" << lives;
+        hud.setString(ss.str());
 
 
         /********Draw the bat, the ball and the HUD*******/
