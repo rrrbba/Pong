@@ -115,6 +115,12 @@ int main()
             score++;
         }
 
+        //Has the ball hit the bat
+        if (ball.getPosition().intersects(bat.getPosition())) {
+            //Hit detected so reverse the ball and score a point
+            ball.reboundBatOrTop();
+        }
+
         //Handle the ball hitting the sides
         if (ball.getPosition().left < 0 || ball.getPosition().left + ball.getPosition().width > window.getSize().x) {
             ball.reboundSides();
