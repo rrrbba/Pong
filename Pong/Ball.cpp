@@ -10,17 +10,17 @@ Ball::Ball (float startX, float startY) {
 	m_Shape.setPosition(m_Position);
 }
 
-//Getter function
+//Getter function - getPosition uses getGlobalBoundds on m_Shape to return a FloatRect instance (used for collision detection)
 FloatRect Ball::getPosition() {
 	return m_Shape.getGlobalBounds();
 }
 
-//Getter function
+//Getter function - getShape returns m_Shape so that it can be drawn each frame of the game loop
 RectangleShape Ball::getShape() {
 	return m_Shape;
 }
 
-//Getter function
+//Getter function - getXVelocity tells the main function which direction the ball is traveling in
 float Ball::getXVelocity() {
 	return m_DirectionX;
 }
