@@ -25,7 +25,7 @@ int main()
 
     //Font
     Font font;
-    font.loadFromFile("fonts/DS-DIGI.ttf");
+    font.loadFromFile("fonts/DS-DIGIT.ttf");
 
     //Set font 
     hud.setFont(font);
