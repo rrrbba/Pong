@@ -33,6 +33,7 @@ void Ball::reboundSides() {
 //m_DirectionY value is inverted when the ball hits the top or bottom (reversing the direction of the ball)
 void Ball::reboundBatOrTop() {
 	m_DirectionY = -m_DirectionY;
+	m_Speed = m_Speed * 1.1f;
 }
 
 //reboundBottom repositions the ball at the top center of the screen and sends it downward. What we want to happen after the player missed a ball and it has hit the bottom of the screen
